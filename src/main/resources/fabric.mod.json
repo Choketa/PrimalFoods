@@ -1,0 +1,29 @@
+{
+"schemaVersion": 1,
+"id": "primalfoods",
+"version": "${version}",
+"name": "Primal Foods",
+"description": "Tell everyone what your mod is about!",
+"authors": [
+  "choketa"
+],
+"contact": {
+  "sources": "https://github.com/choketa/primal-foods"
+},
+"license": "MIT",
+"environment": "*",
+"entrypoints": {
+  "main": [
+    "me.choketa.PrimalFoods"
+  ]
+},
+"depends": {
+  "fabricloader": ">=0.19.3",
+  "minecraft": "~26.1",
+  "java": ">=25",
+  "fabric-api": "*"
+},
+  "mixins": [
+    "primalfoods.mixins.json"
+  ]
+}
