@@ -5,7 +5,7 @@
   "mixins": [
     "foods.FoodAccessor",
     "foods.FoodsInitMixin",
-    "foods.FoodSoundsMixin"
+    "foods.FoodBehaviorMixin"
   ],
   "injectors": {
     "defaultRequire": 1

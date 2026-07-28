@@ -1,8 +1,6 @@
 package me.choketa.mixin.foods;
 
 import me.choketa.PrimalSounds;
-import net.minecraft.server.level.ServerLevel;
-import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.Item;
@@ -19,7 +17,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import java.util.Set;
 
 @Mixin(Consumable.class)
-public class FoodSoundsMixin {
+public class FoodBehaviorMixin {
     @Unique
     private Set<Item> badItems;
 
@@ -41,7 +39,7 @@ public class FoodSoundsMixin {
                 Items.MUSHROOM_STEM);
     }
     @Inject(method = "onConsume", at = @At("HEAD"))
-    private void primalfoods$overrideEatingSound(Level level, LivingEntity user, ItemStack stack, CallbackInfoReturnable<ItemStack> cir) {
+    private void primalfoods$overrideEating(Level level, LivingEntity user, ItemStack stack, CallbackInfoReturnable<ItemStack> cir) {
         if (badItems == null) initList();
         if (!badItems.contains(stack.getItem()))
             return;
