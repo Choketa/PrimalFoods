@@ -15,19 +15,19 @@ public class PrimalSounds {
     public static final Holder.Reference<SoundEvent> FREAK_OUT = registerJukeboxSong("freak_out");
 
     private static Holder.Reference<SoundEvent> registerJukeboxSong(String id) {
-        Identifier identifier = Identifier.fromNamespaceAndPath(PrimalFoods.MOD_ID, id);
+        Identifier identifier = Identifier.fromNamespaceAndPath(PrimalMod.MOD_ID, id);
         return Registry.registerForHolder(BuiltInRegistries.SOUND_EVENT, identifier, SoundEvent.createVariableRangeEvent(identifier));
     }
     // actual registration of all the custom SoundEvents
     private static SoundEvent registerSound(String id) {
-        Identifier identifier = Identifier.fromNamespaceAndPath(PrimalFoods.MOD_ID, id);
+        Identifier identifier = Identifier.fromNamespaceAndPath(PrimalMod.MOD_ID, id);
         return Registry.register(BuiltInRegistries.SOUND_EVENT, identifier, SoundEvent.createVariableRangeEvent(identifier));
     }
 
     // This static method starts class initialization, which then initializes
     // the static class variables.
-    public static void initialize() {
-        PrimalFoods.LOGGER.info("Registering {} Sounds", PrimalFoods.MOD_ID);
+    public static void registerSounds() {
+        PrimalMod.LOGGER.info("Registering {} Sounds", PrimalMod.MOD_ID);
         // Technically this method can stay empty, but some developers like to notify
         // the console, that certain parts of the mod have been successfully initialized
     }

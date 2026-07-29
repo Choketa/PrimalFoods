@@ -1,0 +1,10 @@
+{
+  "goatis_cortisol": {
+    "subtitle": "sound.primalmod.goatis_rage",
+    "sounds": ["primalmod:goatis_cortisol"]
+  },
+  "freak_out": {
+    "subtitle": "sound.primalmod.freak_out",
+    "sounds": ["primalmod:freak_out"]
+  }
+}

@@ -3,6 +3,8 @@ package me.choketa.mixin.foods;
 import me.choketa.PrimalSounds;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.food.FoodData;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -39,13 +41,21 @@ public class FoodBehaviorMixin {
                 Items.MUSHROOM_STEM);
     }
     @Inject(method = "onConsume", at = @At("HEAD"))
-    private void primalfoods$overrideEating(Level level, LivingEntity user, ItemStack stack, CallbackInfoReturnable<ItemStack> cir) {
+    private void primalmod$overrideEating(Level level, LivingEntity user, ItemStack stack, CallbackInfoReturnable<ItemStack> cir) {
         if (badItems == null) initList();
-        if (!badItems.contains(stack.getItem()))
+        if (!(user instanceof Player player)) return;
+        Item item = stack.getItem();
+        if (item.equals(Items.MILK_BUCKET)) {
+            FoodData data = player.getFoodData();
+            data.setFoodLevel(data.getFoodLevel()+1);
+            data.setSaturation(data.getSaturationLevel()+0.1f);
             return;
-        user.playSound(PrimalSounds.GOATIS_CORTISOL, 2.0f, 1.0f);
-        user.animateHurt(0f);
-        user.playSound(SoundEvents.PLAYER_HURT, 1.0f, 1.0f);
-        user.setHealth(user.getHealth()-2.0f);
+        }
+        if (!badItems.contains(item))
+            return;
+        player.playSound(PrimalSounds.GOATIS_CORTISOL, 2.0f, 1.0f);
+        player.animateHurt(0f);
+        player.playSound(SoundEvents.PLAYER_HURT, 1.0f, 1.0f);
+        player.setHealth(player.getHealth()-2.0f);
     }
 }

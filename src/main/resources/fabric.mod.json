@@ -1,9 +1,9 @@
 {
 "schemaVersion": 1,
-"id": "primalfoods",
+"id": "primalmod",
 "version": "${version}",
-"name": "Primal Foods",
-"description": "Tell everyone what your mod is about!",
+"name": "Primal Mod",
+"description": "Primal Mod to imitate being primal irl",
 "authors": [
   "choketa"
 ],
@@ -14,7 +14,10 @@
 "environment": "*",
 "entrypoints": {
   "main": [
-    "me.choketa.PrimalFoods"
+    "me.choketa.PrimalMod"
+  ],
+  "fabric-datagen": [
+    "me.choketa.PrimalDataGenerator"
   ]
 },
 "depends": {
@@ -24,6 +27,6 @@
   "fabric-api": "*"
 },
   "mixins": [
-    "primalfoods.mixins.json"
+    "primalmod.mixins.json"
   ]
 }

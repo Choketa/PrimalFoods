@@ -5,4 +5,4 @@ pluginManagement {
     }
 }
 
-rootProject.name = "primal-foods"
+rootProject.name = "primal-mod"
