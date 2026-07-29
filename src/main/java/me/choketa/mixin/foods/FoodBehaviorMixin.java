@@ -1,6 +1,7 @@
 package me.choketa.mixin.foods;
 
 import me.choketa.PrimalSounds;
+import me.choketa.PrimalUtils;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -29,7 +30,6 @@ public class FoodBehaviorMixin {
                 Items.POISONOUS_POTATO,
                 Items.POTATO,
                 Items.BAKED_POTATO,
-                Items.CAKE,
                 Items.COOKIE,
                 Items.DRIED_KELP,
                 Items.CARROT,
@@ -53,9 +53,6 @@ public class FoodBehaviorMixin {
         }
         if (!badItems.contains(item))
             return;
-        player.playSound(PrimalSounds.GOATIS_CORTISOL, 2.0f, 1.0f);
-        player.animateHurt(0f);
-        player.playSound(SoundEvents.PLAYER_HURT, 1.0f, 1.0f);
-        player.setHealth(player.getHealth()-2.0f);
+        PrimalUtils.punishPlayer(player);
     }
 }

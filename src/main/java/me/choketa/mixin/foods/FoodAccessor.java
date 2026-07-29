@@ -18,4 +18,5 @@ public interface FoodAccessor {
     static void setCookedBeef(FoodProperties food) {
         throw new AssertionError();
     }
+
 }
