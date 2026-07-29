@@ -5,7 +5,8 @@
   "mixins": [
     "foods.FoodAccessor",
     "foods.FoodsInitMixin",
-    "foods.FoodBehaviorMixin"
+    "foods.FoodBehaviorMixin",
+    "foods.CakeMixin"
   ],
   "injectors": {
     "defaultRequire": 1
