@@ -1,8 +1,6 @@
 package me.choketa.mixin.foods;
 
-import me.choketa.PrimalSounds;
 import me.choketa.PrimalUtils;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodData;
@@ -38,7 +36,7 @@ public class FoodBehaviorMixin {
                 Items.BEETROOT_SOUP,
                 Items.PUMPKIN_PIE,
                 Items.SUSPICIOUS_STEW,
-                Items.MUSHROOM_STEM);
+                Items.MUSHROOM_STEW);
     }
     @Inject(method = "onConsume", at = @At("HEAD"))
     private void primalmod$overrideEating(Level level, LivingEntity user, ItemStack stack, CallbackInfoReturnable<ItemStack> cir) {
