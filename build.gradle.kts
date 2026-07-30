@@ -20,6 +20,12 @@ dependencies {
     implementation("net.fabricmc:fabric-loader:$loaderVersion")
     implementation("net.fabricmc.fabric-api:fabric-api:$apiVersion")
 }
+fabricApi {
+    configureDataGeneration {
+        client = true
+    }
+}
+
 
 tasks.named<Copy>("processResources") {
     val currentVersion = project.version

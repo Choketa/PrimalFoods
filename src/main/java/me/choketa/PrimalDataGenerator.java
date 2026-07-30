@@ -16,7 +16,6 @@ public class PrimalDataGenerator implements DataGeneratorEntrypoint {
         pack.addProvider(PrimalRegistryDataProvider::new);
         pack.addProvider(PrimalModelProvider::new);
         pack.addProvider(PrimalSoundsProvider::new);
-
     }
 
     @Override

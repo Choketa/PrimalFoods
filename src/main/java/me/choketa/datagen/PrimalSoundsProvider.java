@@ -7,6 +7,7 @@ import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricSoundsProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.Identifier;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -17,7 +18,7 @@ public class PrimalSoundsProvider extends FabricSoundsProvider {
     }
 
     @Override
-    protected void configure(HolderLookup.Provider registryLookup, SoundExporter exporter) {
+    protected void configure(HolderLookup.@NotNull Provider registryLookup, SoundExporter exporter) {
         exporter.add(PrimalSounds.FREAK_OUT,
                 SoundTypeBuilder.of(PrimalSounds.FREAK_OUT.value())
                         .sound(SoundTypeBuilder.RegistrationBuilder.ofFile(
@@ -25,7 +26,7 @@ public class PrimalSoundsProvider extends FabricSoundsProvider {
     }
 
     @Override
-    public String getName() {
-        return "";
+    public @NotNull String getName() {
+        return "Primal Sounds Provider";
     }
 }
