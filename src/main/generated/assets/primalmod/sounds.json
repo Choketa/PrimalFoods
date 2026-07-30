@@ -15,5 +15,9 @@
   "dirty_dog": {
     "subtitle": "sound.primalmod.dirty_dog",
     "sounds": ["primalmod:dirty_dog"]
+  },
+  "meeks_motivation": {
+    "subtitle": "sound.primalmod.meeks_motivation",
+    "sounds": ["primalmod:meeks_motivation"]
   }
 }
