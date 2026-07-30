@@ -36,7 +36,8 @@ public class FoodBehaviorMixin {
                 Items.BEETROOT_SOUP,
                 Items.PUMPKIN_PIE,
                 Items.SUSPICIOUS_STEW,
-                Items.MUSHROOM_STEW);
+                Items.MUSHROOM_STEW,
+                Items.BREAD);
     }
     @Inject(method = "onConsume", at = @At("HEAD"))
     private void primalmod$overrideEating(Level level, LivingEntity user, ItemStack stack, CallbackInfoReturnable<ItemStack> cir) {
