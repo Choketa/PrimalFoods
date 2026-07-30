@@ -12,6 +12,7 @@ public class PrimalSounds {
     }
 
     public static final SoundEvent GOATIS_CORTISOL = registerSound("goatis_cortisol");
+    public static final SoundEvent DIRTY_DOG = registerSound("dirty_dog");
     public static final Holder.Reference<SoundEvent> FREAK_OUT = registerJukeboxSong("freak_out");
 
     private static Holder.Reference<SoundEvent> registerJukeboxSong(String id) {

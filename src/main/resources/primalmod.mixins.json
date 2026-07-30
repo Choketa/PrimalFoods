@@ -6,7 +6,8 @@
     "foods.FoodAccessor",
     "foods.FoodsInitMixin",
     "foods.FoodBehaviorMixin",
-    "foods.CakeMixin"
+    "foods.CakeMixin",
+    "furnace.FurnaceMixin"
   ],
   "injectors": {
     "defaultRequire": 1

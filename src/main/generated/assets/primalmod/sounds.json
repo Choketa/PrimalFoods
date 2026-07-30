@@ -11,5 +11,9 @@
   "goatis_cortisol": {
     "subtitle": "sound.primalmod.goatis_rage",
     "sounds": ["primalmod:goatis_cortisol"]
+  },
+  "dirty_dog": {
+    "subtitle": "sound.primalmod.dirty_dog",
+    "sounds": ["primalmod:dirty_dog"]
   }
 }
