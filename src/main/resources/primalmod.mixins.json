@@ -7,7 +7,9 @@
     "foods.FoodsInitMixin",
     "foods.FoodBehaviorMixin",
     "foods.CakeMixin",
-    "furnace.FurnaceMixin"
+    "furnace.FurnaceMixin",
+    "consumables.ConsumableAccessor",
+    "consumables.ConsumablesInitMixin"
   ],
   "injectors": {
     "defaultRequire": 1
