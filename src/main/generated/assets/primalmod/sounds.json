@@ -1,0 +1,15 @@
+{
+  "freak_out": {
+    "sounds": [
+      {
+        "name": "primalmod:freak_out",
+        "stream": true
+      }
+    ],
+    "subtitle": "subtitles.primalmod.freak_out"
+  },
+  "goatis_cortisol": {
+    "subtitle": "sound.primalmod.goatis_rage",
+    "sounds": ["primalmod:goatis_cortisol"]
+  }
+}
