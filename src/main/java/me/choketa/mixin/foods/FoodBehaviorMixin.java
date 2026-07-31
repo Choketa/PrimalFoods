@@ -1,6 +1,8 @@
 package me.choketa.mixin.foods;
 
 import me.choketa.PrimalUtils;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodData;
@@ -52,6 +54,8 @@ public class FoodBehaviorMixin {
         }
         if (!badItems.contains(item))
             return;
+        if (item.equals(Items.GOLDEN_CARROT))
+            player.addEffect(new MobEffectInstance(MobEffects.POISON, 600, 1));
         PrimalUtils.punishPlayer(player);
     }
 }
