@@ -1,6 +1,7 @@
 package me.choketa;
 
 import me.choketa.creativemodetab.PrimalCreativeModeTabs;
+import me.choketa.event.PrimalPlayerEvents;
 import me.choketa.item.PrimalItems;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.entity.event.v1.ServerPlayerEvents;
@@ -20,26 +21,11 @@ public class PrimalMod implements ModInitializer {
         PrimalSounds.registerSounds();
         PrimalItems.registerModItems();
         PrimalCreativeModeTabs.registerModCreativeModeTabs();
+        PrimalPlayerEvents.register();
 
-        ServerPlayerEvents.AFTER_RESPAWN.register((_, newPlayer, _) -> {
-            try (ServerLevel level = newPlayer.level()) {
-                level.playSound(null,
-                        newPlayer.getX(),
-                        newPlayer.getY(),
-                        newPlayer.getZ(),
-                        PrimalSounds.MEEKS_MOTIVATION,
-                        SoundSource.PLAYERS,
-                        1.0f,
-                        1.0f);
+    }
 
-            } catch (Exception e) {
-                LOGGER.error("Lol wtf", e);
-            }
-        });
-
-}
-
-public static Identifier id(String path) {
-    return Identifier.fromNamespaceAndPath(MOD_ID, path);
-}
+    public static Identifier id(String path) {
+        return Identifier.fromNamespaceAndPath(MOD_ID, path);
+    }
 }
