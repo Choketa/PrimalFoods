@@ -1,6 +1,7 @@
 package me.choketa.mixin.foods;
 
 import me.choketa.PrimalUtils;
+import me.choketa.item.PrimalItems;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
@@ -49,8 +50,16 @@ public class FoodBehaviorMixin {
         if (item.equals(Items.MILK_BUCKET)) {
             FoodData data = player.getFoodData();
             data.setFoodLevel(data.getFoodLevel()+1);
-            data.setSaturation(data.getSaturationLevel()+0.1f);
+            data.setSaturation(data.getSaturationLevel()+0.1f); //Raw milk + yes = holy height
             return;
+        }
+        else if (item.equals(PrimalItems.VEGETABLE_JUICE)) {
+            if (player.hasEffect(MobEffects.WEAKNESS) ||
+                player.hasEffect(MobEffects.SLOWNESS) ||
+                player.hasEffect(MobEffects.POISON) ||
+                player.hasEffect(MobEffects.WITHER)) return;
+            FoodData data = player.getFoodData();
+            data.setFoodLevel(data.getFoodLevel()-1); //Antinootrients maxxing
         }
         if (!badItems.contains(item))
             return;

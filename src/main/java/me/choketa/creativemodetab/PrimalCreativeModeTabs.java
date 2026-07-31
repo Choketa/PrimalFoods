@@ -18,6 +18,7 @@ public class PrimalCreativeModeTabs {
                     .title(Component.translatable("creativemodetab.primalmod.primal_items"))
                     .displayItems((parameters, output) -> {
                         output.accept(PrimalItems.FREAK_OUT_MUSIC_DISC);
+                        output.accept(PrimalItems.VEGETABLE_JUICE);
                     }).build());
     public static void registerModCreativeModeTabs() {
         PrimalMod.LOGGER.info("Registering Creative Mode Tabs for {}", PrimalMod.MOD_ID);

@@ -4,10 +4,7 @@ import me.choketa.creativemodetab.PrimalCreativeModeTabs;
 import me.choketa.event.PrimalPlayerEvents;
 import me.choketa.item.PrimalItems;
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.entity.event.v1.ServerPlayerEvents;
 import net.minecraft.resources.Identifier;
-import net.minecraft.server.level.ServerLevel;
-import net.minecraft.sounds.SoundSource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

@@ -4,6 +4,7 @@ import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricDynamicRegistryProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -18,7 +19,7 @@ public class PrimalRegistryDataProvider extends FabricDynamicRegistryProvider {
     }
 
     @Override
-    public String getName() {
-        return "";
+    public @NotNull String getName() {
+        return "Primal Registry Data Provider";
     }
 }
