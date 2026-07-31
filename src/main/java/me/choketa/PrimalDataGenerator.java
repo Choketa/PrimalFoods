@@ -1,9 +1,6 @@
 package me.choketa;
 
-import me.choketa.datagen.PrimalJukeboxSongs;
-import me.choketa.datagen.PrimalModelProvider;
-import me.choketa.datagen.PrimalRegistryDataProvider;
-import me.choketa.datagen.PrimalSoundsProvider;
+import me.choketa.datagen.*;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.minecraft.core.RegistrySetBuilder;
@@ -16,6 +13,7 @@ public class PrimalDataGenerator implements DataGeneratorEntrypoint {
         pack.addProvider(PrimalRegistryDataProvider::new);
         pack.addProvider(PrimalModelProvider::new);
         pack.addProvider(PrimalSoundsProvider::new);
+        pack.addProvider(PrimalRecipeProvider::new);
     }
 
     @Override
